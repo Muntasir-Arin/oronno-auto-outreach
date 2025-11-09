@@ -19,7 +19,6 @@ import {
 import {
   LayoutDashboard,
   MessageSquare,
-  BarChart3,
   Zap,
   FileText,
   Shield,
@@ -27,13 +26,21 @@ import {
   Settings,
   LogOut,
   ChevronDown,
+  Phone,
+  Mail,
+  Users,
+  PieChart,
+  Headphones,
 } from "lucide-react"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 import { useState } from "react"
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
+import Image from "next/image"
 
 export function AppSidebar() {
-  const [expandedItems, setExpandedItems] = useState<string[]>(["feedback", "console"])
+  const router = useRouter()
+  const [expandedItems, setExpandedItems] = useState<string[]>(["feedback", "console", "calls"])
 
   const toggleExpanded = (id: string) => {
     setExpandedItems((prev) => (prev.includes(id) ? prev.filter((i) => i !== id) : [...prev, id]))
@@ -42,9 +49,14 @@ export function AppSidebar() {
   return (
     <Sidebar className="border-r border-border">
       <SidebarHeader className="border-b border-border">
-        <Link href="/" className="flex items-center gap-2 px-2 py-1">
-          <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-blue-700">
-            <Zap className="w-5 h-5 text-white" />
+        <Link href="/" className="flex items-center gap-3 px-4 py-2">
+          <div className="relative w-10 h-10 flex-shrink-0">
+            <Image
+              src="/oronno-icon.svg"
+              alt="Oronno Logo"
+              fill
+              className="object-contain"
+            />
           </div>
           <div className="flex flex-col">
             <span className="text-lg font-bold text-foreground">Oronno</span>
@@ -64,6 +76,62 @@ export function AppSidebar() {
                   <Link href="/dashboard">
                     <LayoutDashboard className="w-4 h-4" />
                     <span>Dashboard</span>
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+
+              <SidebarMenuItem>
+                <SidebarMenuButton asChild tooltip="Agent call interface">
+                  <Link href="/agent">
+                    <Headphones className="w-4 h-4" />
+                    <span>Agent Interface</span>
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+
+              <SidebarMenuItem>
+                <SidebarMenuButton asChild tooltip="Manage customer database">
+                  <Link href="/customers">
+                    <Users className="w-4 h-4" />
+                    <span>Customers</span>
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+
+              <SidebarMenuItem>
+                <button
+                  onClick={() => toggleExpanded("calls")}
+                  className="w-full flex items-center justify-between px-2 py-2 rounded-md hover:bg-sidebar-accent text-sm"
+                >
+                  <div className="flex items-center gap-2">
+                    <Phone className="w-4 h-4" />
+                    <span>Calls</span>
+                  </div>
+                  <ChevronDown
+                    className={`w-4 h-4 transition-transform ${expandedItems.includes("calls") ? "rotate-180" : ""}`}
+                  />
+                </button>
+                {expandedItems.includes("calls") && (
+                  <SidebarMenuSub>
+                    <SidebarMenuSubItem>
+                      <SidebarMenuSubButton asChild>
+                        <Link href="/calls/live">Live Monitor</Link>
+                      </SidebarMenuSubButton>
+                    </SidebarMenuSubItem>
+                    <SidebarMenuSubItem>
+                      <SidebarMenuSubButton asChild>
+                        <Link href="/calls/history">History</Link>
+                      </SidebarMenuSubButton>
+                    </SidebarMenuSubItem>
+                  </SidebarMenuSub>
+                )}
+              </SidebarMenuItem>
+
+              <SidebarMenuItem>
+                <SidebarMenuButton asChild tooltip="Manage email campaigns">
+                  <Link href="/campaigns">
+                    <Mail className="w-4 h-4" />
+                    <span>Campaigns</span>
                   </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>
@@ -98,15 +166,6 @@ export function AppSidebar() {
               </SidebarMenuItem>
 
               <SidebarMenuItem>
-                <SidebarMenuButton asChild tooltip="View analytics & insights">
-                  <Link href="/analytics">
-                    <BarChart3 className="w-4 h-4" />
-                    <span>Analytics</span>
-                  </Link>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-
-              <SidebarMenuItem>
                 <SidebarMenuButton asChild tooltip="Manage outreach orchestration">
                   <Link href="/orchestrator">
                     <Zap className="w-4 h-4" />
@@ -120,6 +179,15 @@ export function AppSidebar() {
                   <Link href="/scripts">
                     <FileText className="w-4 h-4" />
                     <span>Scripts</span>
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+
+              <SidebarMenuItem>
+                <SidebarMenuButton asChild tooltip="View reports and analytics">
+                  <Link href="/reports">
+                    <PieChart className="w-4 h-4" />
+                    <span>Reports</span>
                   </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>
@@ -208,7 +276,10 @@ export function AppSidebar() {
           </SidebarMenuItem>
           <SidebarMenuItem>
             <SidebarMenuButton asChild>
-              <button className="w-full justify-start text-red-600 hover:bg-red-50">
+              <button
+                onClick={() => router.push("/login")}
+                className="w-full justify-start text-red-600 hover:bg-red-50"
+              >
                 <LogOut className="w-4 h-4" />
                 <span>Sign Out</span>
               </button>

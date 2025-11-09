@@ -27,7 +27,7 @@ export function FeedbackInboxEnhanced() {
     {
       id: 1,
       date: "2025-11-09 14:32",
-      buyer: "+1 (555) 123-****",
+      buyer: "+88 01712-***678",
       product: "Premium Package",
       rating: 5,
       sentiment: 0.95,
@@ -40,7 +40,7 @@ export function FeedbackInboxEnhanced() {
     {
       id: 2,
       date: "2025-11-09 13:18",
-      buyer: "+1 (555) 234-****",
+      buyer: "+88 01823-***789",
       product: "Basic Plan",
       rating: 2,
       sentiment: -0.72,
@@ -53,7 +53,7 @@ export function FeedbackInboxEnhanced() {
     {
       id: 3,
       date: "2025-11-09 11:45",
-      buyer: "+1 (555) 345-****",
+      buyer: "+88 01934-***890",
       product: "Standard Package",
       rating: 4,
       sentiment: 0.58,
@@ -66,7 +66,7 @@ export function FeedbackInboxEnhanced() {
     {
       id: 4,
       date: "2025-11-09 10:15",
-      buyer: "+1 (555) 456-****",
+      buyer: "+88 01645-***901",
       product: "Premium Package",
       rating: 4,
       sentiment: 0.72,
@@ -79,7 +79,7 @@ export function FeedbackInboxEnhanced() {
     {
       id: 5,
       date: "2025-11-09 09:20",
-      buyer: "+1 (555) 567-****",
+      buyer: "+88 01756-***012",
       product: "Basic Plan",
       rating: 1,
       sentiment: -0.88,
@@ -145,11 +145,7 @@ export function FeedbackInboxEnhanced() {
       {/* Main Feedback List */}
       <div className="lg:col-span-2 space-y-4">
         <Card>
-          <CardHeader>
-            <CardTitle>Feedback Inbox</CardTitle>
-            <CardDescription>Manage and respond to customer feedback</CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-4">
+          <CardContent className="space-y-4 pt-6">
             {/* Filters */}
             <div className="space-y-4">
               <div className="relative">
