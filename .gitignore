@@ -100,6 +100,10 @@ lerna-debug.log*
 .env.test.local
 .env.production.local
 
+# Next.js
+.next/
+out/
+
 # OS
 .DS_Store
 .DS_Store?
