@@ -19,6 +19,7 @@ Oronno is an AI-powered post-purchase feedback collection system that uses Gemin
 - Java 23 with Spring Boot 3.5.5 (80% of services)
 - Golang (WebSocket Gateway Service for real-time audio streaming)
 - Python FastAPI (Context Enrichment Service for vector operations)
+- Next.js/React (Portal - Web admin dashboard)
 
 **Infrastructure:**
 - **Message Broker**: Apache Kafka
@@ -37,6 +38,7 @@ Oronno is an AI-powered post-purchase feedback collection system that uses Gemin
 ### Edge Services
 - **API Gateway Service**: Single entry point, routing, authentication, rate limiting
 - **WebSocket Gateway Service** (Golang): Real-time voice streaming, low-latency audio handling
+- **Portal** (Next.js/React): Web-based admin dashboard and user interface
 
 ### Core Business Services
 - **User Management Service**: Authentication, authorization, RBAC, multi-tenant support
@@ -110,6 +112,7 @@ oronno/
 │   ├── DNCListService/
 │   ├── AuditComplianceService/
 │   ├── WebSocketGatewayService/  # Golang
+│   ├── Portal/                   # Next.js/React
 │   ├── CassandraMigrationService/
 │   └── PostgresMigrationService/
 ├── modules/              # Shared modules
@@ -201,6 +204,4 @@ Services use Spring Boot configuration with profiles:
 - **System Design**: See `documentation/oronno-system-design.md` for detailed architecture
 - **Architecture Diagrams**: See `documentation/oronno-architecture-diagrams.md` for visual representations
 
-## License
 
-[Add your license here]
