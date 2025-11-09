@@ -1,0 +1,19 @@
+plugins {
+    id 'org.springframework.boot' version '3.5.5'
+}
+
+dependencies {
+    implementation project(':modules:config')
+    
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-data-cassandra'
+    
+    // Cassandra migration library
+    implementation 'org.cognitor.cassandra:cassandra-migration-spring-boot-starter:2.6.0_v4'
+    
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+

@@ -1,0 +1,8 @@
+plugins {
+    id 'java'
+}
+
+dependencies {
+    // No external dependencies needed - uses Java's built-in audio libraries
+}
+

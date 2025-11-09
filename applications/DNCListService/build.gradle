@@ -1,0 +1,21 @@
+plugins {
+    id 'org.springframework.boot' version '3.5.5'
+}
+
+dependencies {
+    implementation project(':modules:config')
+    implementation project(':modules:datamodel')
+    implementation project(':modules:redis-config')
+
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+

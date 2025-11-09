@@ -1,0 +1,33 @@
+plugins {
+    id 'org.springframework.boot' version '3.5.5'
+}
+
+dependencies {
+    implementation project(':modules:config')
+    implementation project(':modules:redis-config')
+    
+    // Spring Boot Starters
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    
+    // SendGrid
+    implementation 'com.sendgrid:sendgrid-java:4.10.1'
+    
+    // Template engine
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    
+    // Scheduling for send time optimization
+    implementation 'org.springframework.boot:spring-boot-starter-quartz'
+    
+    // Development tools
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'io.projectreactor:reactor-test'
+}
+

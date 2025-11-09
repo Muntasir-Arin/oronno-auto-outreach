@@ -1,0 +1,252 @@
+# Compiled class files
+*.class
+
+# Log files
+*.log
+logs/
+*.log.*
+
+# Package Files
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Build directories
+build/
+target/
+out/
+bin/
+dist/
+.gradle/
+.mvn/
+
+# IDE - IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# IDE - Eclipse
+.classpath
+.project
+.settings/
+bin/
+.metadata/
+
+# IDE - VS Code
+.vscode/
+*.code-workspace
+
+# IDE - NetBeans
+nbproject/
+nbbuild/
+nbdist/
+.nb-gradle/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+.pytest_cache/
+.coverage
+htmlcov/
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+
+# Go
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+go.work
+vendor/
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+.npm
+.eslintcache
+.node_repl_history
+*.tgz
+.yarn-integrity
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*~
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+.cache/
+
+# Application specific
+*.properties
+!application.properties.example
+*.yml
+!application.yml.example
+*.yaml
+!application.yaml.example
+
+# Secrets and credentials
+*.key
+*.pem
+*.p12
+*.jks
+*.keystore
+*.truststore
+secrets/
+credentials/
+*.secret
+.env
+.env.local
+.env.*.local
+**/firebase*.json
+**/service-account*.json
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+*.h2.db
+
+# Docker
+.dockerignore
+docker-compose.override.yml
+
+# Kubernetes
+*.kubeconfig
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+.terraform.lock.hcl
+*.tfvars
+!*.tfvars.example
+
+# Helm
+charts/*/charts/
+charts/*/requirements.lock
+
+# Logs and monitoring
+*.log
+logs/
+*.log.*
+
+# Test coverage
+coverage/
+.nyc_output/
+*.lcov
+
+# Documentation builds
+docs/_build/
+site/
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Local configuration
+local/
+local.*
+*.local
+
+# Generated files
+generated/
+.generated/
+*.generated.*
+
+# Migration files (if auto-generated)
+**/migration/*.sql
+!**/migration/V*.sql
+
+# Application data
+data/
+uploads/
+downloads/
+temp/
+
+# IDE workspace files
+*.code-workspace
+.project
+.classpath
+.settings/
+
+# Maven
+.mvn/wrapper/maven-wrapper.jar
+
+# Gradle
+.gradle/
+gradle-app.setting
+!gradle-wrapper.jar
+!gradle-wrapper.properties
+
+# Spring Boot
+spring-boot-*.log
+
+# Kafka
+kafka-logs/
+zookeeper/
+
+# Redis
+dump.rdb
+*.rdb
+
+# Cassandra
+*.cql
+!**/cql/*.cql
+
+# Vector DB
+*.index
+*.vec
+
+# Monitoring
+prometheus_data/
+grafana_data/
+
+# Oronno
+oronno-system-design.md
+oronno-architecture-diagrams.md
+
+# Reference
+reference/
